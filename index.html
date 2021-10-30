@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function additem(){
+            let newitem = document.createElement("div");
+            newitem.innerHTML = document.getElementById("box").value;
+            
+            document.getElementById("list").appendChild(newitem);
+            newitem.onclick = removeitem;
+
+        }
+
+
+        function removeitem(item) {
+
+            document.getElementById("list").removeChild(this);
+        }
+    </script>
+</head>
+
+<body>
+<p>할 일 목록</p>
+<input type="text" id="box" value="type here to add task">
+<br/>
+<input type="button" value="add item" onclick="additem();">
+<div id="list"></div>
+</body>
+
+</html>
